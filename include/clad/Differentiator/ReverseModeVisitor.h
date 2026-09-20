@@ -750,7 +750,7 @@ namespace clad {
         clang::Stmt* forLoopIncDiff = nullptr, bool isForLoop = false,
         clang::SourceLocation loopLoc = clang::SourceLocation());
 
-    StmtDiff DifferentiateCanonicalLoop(const clang::ForStmt* S);
+    StmtDiff DifferentiateCanonicalLoop(const clang::ForStmt* S, clang::Expr* ArraySizeExpr = nullptr);
 
     /// Handles `break`/`continue` inside a differentiated loop. It owns a
     /// control-flow tape recording which one fired in which iteration, so the
